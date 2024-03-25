@@ -1,0 +1,41 @@
+version: datasets/v0.2
+title: Test Failures
+source: Test Results
+description: "#dashboard"
+metadata: |-
+  {
+    "name": "elementary_test_results",
+    "label": "Test Failures", 
+    "related_table": {
+      "columns": [
+        {"name": "created_at_date", "label": "Date", "description": "Date"}
+      ],
+      "aggregates": [
+        {"name": "unique_tests", "label": "Failures", "description": "Failures"}
+      ]
+    }
+  }
+visualisation: |-
+  {"chartjs-chart": 
+    {"chartType": "bar", 
+      "options": {
+        "scales": {
+          "y": {
+            "beginAtZero": true,
+            "ticks": {
+              "stepSize": 1
+            }
+          }
+        }
+      }
+    }
+  }
+query: |-
+  SELECT
+      DATE_TRUNC('day', CREATED_AT)::date "elementary_test_results.created_at_date"
+      , COUNT(DISTINCT TEST_NAME) "elementary_test_results.unique_tests"
+  FROM MATATIKA_TEST_RESULTS.elementary_test_results
+  WHERE elementary_test_results.created_at >= CURRENT_DATE - INTERVAL '6 days'
+  AND (status = 'fail' or status = 'error')
+  GROUP BY "elementary_test_results.created_at_date"
+  ORDER BY "elementary_test_results.created_at_date"

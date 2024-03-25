@@ -1,0 +1,27 @@
+version: datasets/v0.2
+title: Test Results For assert stg job value discounts equal invoice discounts pre vat
+source: Test Results
+description: "#dashboard"
+metadata: |-
+  {
+    "name": "test_failure_central",
+    "label": "Test Failure Details", 
+    "related_table": {
+      "columns": [
+        {"name": "creation_date", "label": "Creation Date", "description": "Creation Date"},
+        {"name": "invoice_number", "label": "Invoice Number", "description": "Invoice Number"}
+      ]
+    }
+  }
+visualisation: '{"html-table": {}}'
+query: |-
+  SELECT
+     test_failures_json:CREATION_DATE::timestamp AS "test_failure_central.creation_date"
+     , test_failures_json:INVOICE_NUMBER::text AS "test_failure_central.invoice_number"
+  FROM test_failure_central
+  WHERE test_run_time = (
+    SELECT 
+      MAX(test_run_time)
+    FROM test_failure_central
+    WHERE test_name = 'assert_stg_job_value_discounts_equal_invoice_discounts_pre_vat')
+  AND test_name = 'assert_stg_job_value_discounts_equal_invoice_discounts_pre_vat'

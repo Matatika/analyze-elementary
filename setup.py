@@ -7,7 +7,8 @@ setup(
     packages=find_packages(),
     package_data={
         "bundle": [
-            "analyze/**/*.yml",
+            "analyze/channels/*.yml",
+            "analyze/datasets/elementary/dashboard/**/*.yml",
             "notebook/*.ipynb",
             "pipelines/*.yml"
         ]

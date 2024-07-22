@@ -9,6 +9,7 @@ setup(
         "bundle": [
             "analyze/channels/*.yml",
             "analyze/datasets/elementary/dashboard/**/*.yml",
+            "analyze/datasets/elementary/*.yml",
             "notebook/*.ipynb",
             "pipelines/*.yml"
         ]

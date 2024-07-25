@@ -53,15 +53,15 @@ app_properties:
         <div className="chart-div" style={{'padding-bottom': '30px'}}>
           <div>
             <h2 className="text-center">Test results breakdown</h2>
-            <DatasetChart alias="test-results/dashboard/doughnuts/test-results-breakdown"/>
+            <DatasetChart alias="elementary/dashboard/doughnuts/test-results-breakdown"/>
           </div>
           <div className="grey-border-right">
             <h2 className="text-center">Tables health</h2>
-            <DatasetChart alias="test-results/dashboard/doughnuts/tables-health" />
+            <DatasetChart alias="elementary/dashboard/doughnuts/tables-health" />
           </div>
           <div>
             <h2 className="text-center">Monitored tables</h2>
-            <DatasetChart alias="test-results/dashboard/doughnuts/monitored-tables" />
+            <DatasetChart alias="elementary/dashboard/doughnuts/monitored-tables" />
           </div>
         </div>
         <div style={{'display':'flex', 'padding-bottom':'25px'}}>
@@ -71,32 +71,32 @@ app_properties:
         <div className="chart-div">
           <div className="grey-border-right metric-width">
             <h2 className="text-center">Freshness</h2>
-            <DatasetLink alias="test-results/dashboard/test-results-overview/freshness-test-results">
-              <DatasetChart alias="test-results/dashboard/metrics/freshness-metric"/>
+            <DatasetLink alias="elementary/dashboard/test-results-overview/freshness-test-results">
+              <DatasetChart alias="elementary/dashboard/metrics/freshness-metric"/>
             </DatasetLink>
           </div>
           <div className="grey-border-right metric-width">
             <h2 className="text-center">Volume</h2>
-              <DatasetLink alias="test-results/dashboard/test-results-overview/volume-test-results">
-                <DatasetChart alias="test-results/dashboard/metrics/volume-metric" />
+              <DatasetLink alias="elementary/dashboard/test-results-overview/volume-test-results">
+                <DatasetChart alias="elementary/dashboard/metrics/volume-metric" />
               </DatasetLink>
           </div>
           <div className="grey-border-right metric-width">
             <h2 className="text-center">Schema Changes</h2>
-            <DatasetLink alias="test-results/dashboard/test-results-overview/schema-test-results">
-              <DatasetChart alias="test-results/dashboard/metrics/schema-metric" />
+            <DatasetLink alias="elementary/dashboard/test-results-overview/schema-test-results">
+              <DatasetChart alias="elementary/dashboard/metrics/schema-metric" />
             </DatasetLink>
           </div>
           <div className="grey-border-right metric-width">
             <h2 className="text-center">Model Tests</h2>
-            <DatasetLink alias="test-results/dashboard/test-results-overview/dbt-tests-test-results">
-              <DatasetChart alias="test-results/dashboard/metrics/dbt-tests-metric" />
+            <DatasetLink alias="elementary/dashboard/test-results-overview/dbt-tests-test-results">
+              <DatasetChart alias="elementary/dashboard/metrics/dbt-tests-metric" />
             </DatasetLink>
           </div>
           <div className="metric-width">
             <h2 className="text-center">Anomalies</h2>
-            <DatasetLink alias="test-results/dashboard/test-results-overview/anomalies-test-results">
-              <DatasetChart alias="test-results/dashboard/metrics/anomalies-metric" />
+            <DatasetLink alias="elementary/dashboard/test-results-overview/anomalies-test-results">
+              <DatasetChart alias="elementary/dashboard/metrics/anomalies-metric" />
             </DatasetLink>
           </div>
         </div>
@@ -105,19 +105,19 @@ app_properties:
         <div className="chart-div">
           <div className="grey-box">
             <h2 className="text-center">Unique Test Executions</h2>
-            <DatasetChart alias="test-results/dashboard/bars/unique-test-executions" />
+            <DatasetChart alias="elementary/dashboard/bars/unique-test-executions" />
           </div>
           <div style={{'padding-left': '25px'}}>
           </div>
           <div className="grey-box">
             <h2 className="text-center">Test Failures</h2>
-            <DatasetChart alias="test-results/dashboard/bars/test-failures" />
+            <DatasetChart alias="elementary/dashboard/bars/test-failures" />
           </div>
           <div style={{'padding-left': '25px'}}>
           </div>
           <div className="grey-box">
             <h2 className="text-center">Tables with Failed Tests</h2>
-            <DatasetChart alias="test-results/dashboard/lines/tables-with-failed-tests" />
+            <DatasetChart alias="elementary/dashboard/lines/tables-with-failed-tests" />
           </div>
         </div>
       </div>

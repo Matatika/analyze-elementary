@@ -11,7 +11,8 @@ setup(
             "analyze/datasets/elementary/dashboard/**/*.yml",
             "analyze/datasets/elementary/*.yml",
             "notebook/*.ipynb",
-            "pipelines/*.yml"
+            "pipelines/*.yml",
+            "workspace.yml",
         ]
     },
 )

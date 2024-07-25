@@ -1,9 +1,9 @@
 from setuptools import setup, find_packages
 
 setup(
-    name="analyze-elementary",
+    name="app-elementary",
     version="0.1.0",
-    description="Matatika datasets for the Elementary test results",
+    description="App Elementary, everything you need to get elementary up and running in your Matatika workspace.",
     packages=find_packages(),
     package_data={
         "bundle": [

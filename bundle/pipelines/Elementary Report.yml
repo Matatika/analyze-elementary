@@ -12,10 +12,6 @@ script: |-
 
   meltano run notebook:run sendgrid:send
 data_components:
-- dbt
-- dbt-test-results
-- matatika
-- elementary
 - notebook
 - sendgrid
 properties:

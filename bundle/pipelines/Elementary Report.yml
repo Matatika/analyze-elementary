@@ -1,0 +1,27 @@
+version: pipelines/v0.1
+name: Elementary Report
+timeout: 1800
+script: |-
+  meltano install utility notebook
+  meltano install utility sendgrid
+
+  export CURRENT_DATE=$(date +"%B %d, %Y")
+  export DATE_SEVEN_DAYS_AGO=$(date -d "6 days ago" +"%B %d, %Y")
+
+  export SENDGRID_TITLE="$SENDGRID_TITLE: $DATE_SEVEN_DAYS_AGO - $CURRENT_DATE"
+
+  meltano run notebook:run sendgrid:send
+data_components:
+- dbt
+- dbt-test-results
+- matatika
+- elementary
+- notebook
+- sendgrid
+properties:
+  notebook.path: notebook/data_quality_report.ipynb
+  sendgrid.body: email_template.html
+  sendgrid.title: Daily Data Quality Report
+  sendgrid.content_type: text/html
+triggered_by:
+- Elementary Model Validation

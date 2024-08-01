@@ -9,8 +9,6 @@ script: |-
   meltano install utility dbt-test-results
   meltano install utility matatika
   meltano install utility elementary
-  meltano install utility notebook
-  meltano install utility sendgrid
 
   meltano invoke dbt deps
 
@@ -39,23 +37,9 @@ script: |-
     -H "Content-Type: text/html" \
     --data-binary @$ELEMENTARY_FILE_PATH
 
-  export CURRENT_DATE=$(date +"%B %d, %Y")
-  export DATE_SEVEN_DAYS_AGO=$(date -d "6 days ago" +"%B %d, %Y")
-
-  export SENDGRID_TITLE="$SENDGRID_TITLE: $DATE_SEVEN_DAYS_AGO - $CURRENT_DATE"
-
-  meltano run notebook:run sendgrid:send
-
   exit $dbt_test_exit_code
 data_components:
 - dbt
 - dbt-test-results
 - matatika
 - elementary
-- notebook
-- sendgrid
-properties:
-  notebook.path: notebook/data_quality_report.ipynb
-  sendgrid.body: email_template.html
-  sendgrid.title: Daily Data Quality Report
-  sendgrid.content_type: text/html

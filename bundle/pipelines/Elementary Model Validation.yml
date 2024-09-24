@@ -5,12 +5,7 @@ timeout: 1800
 script: |-
   export STORE_TEST_RESULTS=true
 
-  meltano install transformer dbt
-  meltano install utility dbt-test-results
-  meltano install utility matatika
-  meltano install utility elementary
-  meltano install utility notebook
-  meltano install utility sendgrid
+  meltano install - dbt dbt-test-results matatika elementary notebook sendgrid
 
   meltano invoke dbt deps
 

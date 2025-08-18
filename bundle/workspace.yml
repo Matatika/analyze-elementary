@@ -1,7 +1,7 @@
 version: workspaces/v0.1
 app_properties:
   DASHBOARD_CONTENT: |-
-    <style jsx>{`
+    <style jsx="true">{`
       .grey-border-right {border-right: 2px solid #D3D3D3}
       .grey-box {
         border: 1px solid #D3D3D3;
